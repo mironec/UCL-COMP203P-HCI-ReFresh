@@ -11,13 +11,14 @@
       <a ui-sref="menu.cart" id="placeOrder-button12" class="button button-balanced  button-block">Check Out</a>
     </form>
     <ion-list id="placeOrder-list4">
-      <ion-item id="placeOrder-list-item7" ui-sref="menu.milkBrands">Milk</ion-item>
+	  <ion-item ng-repeat="product in products" ui-sref="menu.brandSelection({productName: product})">{{product}}</ion-item>
+      <!--<ion-item id="placeOrder-list-item7" ui-sref="menu.milkBrands">Milk</ion-item>
       <ion-item id="placeOrder-list-item8">Bread</ion-item>
       <ion-item id="placeOrder-list-item9">Butter</ion-item>
       <ion-item id="placeOrder-list-item10">Salt</ion-item>
       <ion-item id="placeOrder-list-item11">Prawns</ion-item>
       <ion-item id="placeOrder-list-item12">Chicken</ion-item>
-      <ion-item id="placeOrder-list-item13">Tomatoes</ion-item>
+      <ion-item id="placeOrder-list-item13">Tomatoes</ion-item>-->
     </ion-list>
   </ion-content>
 </ion-view>

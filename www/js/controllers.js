@@ -1,11 +1,12 @@
 angular.module('app.controllers', [])
   
-.controller('placeOrderCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('placeOrderCtrl', ['$scope', '$stateParams', '$rootScope', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
-
+function ($scope, $stateParams, $rootScope) {
+	if($stateParams.productName !== undefined){
+		$rootScope.cart.push({product: $stateParams.productName, brand: $stateParams.brandName, shop: $stateParams.shopName});
+	}
 }])
    
 .controller('menuCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
@@ -40,11 +41,11 @@ function ($scope, $stateParams) {
 
 }])
    
-.controller('milkBrandsCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('brandSelectionCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
-
+	$scope.product = $stateParams.productName;
 
 }])
    
@@ -92,12 +93,12 @@ function ($scope, $stateParams) {
   });
 }])
    
-.controller('bowlandMilkCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('shopSelectionCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
-
-
+	$scope.product = $stateParams.productName;
+	$scope.brand = $stateParams.brandName;
 }])
    
 .controller('cartCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
@@ -128,7 +129,7 @@ function ($scope, $stateParams) {
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
-
+	$scope.semidate = Date.now();
 
 }])
  

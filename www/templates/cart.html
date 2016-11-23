@@ -1,7 +1,13 @@
 <ion-view title="Cart" hide-back-button="true" id="page12">
   <ion-content padding="true" class="has-header">
     <ion-list id="cart-list8">
-      <ion-item class="item-thumbnail-left item-icon-right" id="cart-list-item37">
+		<ion-item class="item-thumbnail-left item-icon-right" ng-repeat="product in cart">
+			<img ng-src="{{getShopByName(product.shop).shopImage}}">
+			<h2>{{product.brand}} {{product.product}} - {{getShopByName(product.shop).getPriceFormatted(product.product, product.brand)}}</h2>
+			<p>Quantity - 1</p>
+			<i class="icon ion-android-delete"></i>
+		</ion-item>
+      <!--<ion-item class="item-thumbnail-left item-icon-right" id="cart-list-item37">
         <img src="img/LPk9DVlhQei60KxPxUWA_PlanetOrganicLarge.jpg">
         <h2>Chicken - £5.79</h2>
         <p>Quantity - 1</p>
@@ -24,7 +30,7 @@
         <h2>Eggs - £2.25</h2>
         <p>Quantity - 1 (X12)</p>
         <i class="icon ion-android-delete"></i>
-      </ion-item>
+      </ion-item>-->
     </ion-list>
     <a ui-sref="menu.payment" id="cart-button13" class="button button-positive  button-block">Proceed to Check out</a>
   </ion-content>

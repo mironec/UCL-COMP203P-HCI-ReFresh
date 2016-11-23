@@ -11,7 +11,7 @@ angular.module('app.routes', [])
   
 
       .state('menu.placeOrder', {
-    url: '/page1',
+    url: '/page1?productName&brandName&shopName',
     views: {
       'side-menu21': {
         templateUrl: 'templates/placeOrder.html',
@@ -56,12 +56,12 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.milkBrands', {
-    url: '/page8',
+  .state('menu.brandSelection', {
+    url: '/page8?productName',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/milkBrands.html',
-        controller: 'milkBrandsCtrl'
+        templateUrl: 'templates/brandSelection.html',
+        controller: 'brandSelectionCtrl'
       }
     }
   })
@@ -76,12 +76,12 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.bowlandMilk', {
-    url: '/page10',
+  .state('menu.shopSelection', {
+    url: '/page10?productName&brandName',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/bowlandMilk.html',
-        controller: 'bowlandMilkCtrl'
+        templateUrl: 'templates/shopSelection.html',
+        controller: 'shopSelectionCtrl'
       }
     }
   })

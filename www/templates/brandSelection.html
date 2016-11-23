@@ -1,0 +1,16 @@
+<ion-view title="{{product}} Brands" hide-back-button="true" id="page8">
+  <ion-content padding="true" class="has-header">
+    <ion-list id="milkBrands-list6">
+      <ion-item id="milkBrands-list-item23" ui-sref="menu.shopSelection({productName: product, brandName: ''})">No Brand Preference</ion-item>
+	  <ion-item ng-repeat="brand in brands" ui-sref="menu.shopSelection({productName: product, brandName: brand})">{{brand}} {{product}}</ion-item>
+      <!--<ion-item id="milkBrands-list-item25" ui-sref="menu.bowlandMilk">Bowland {{product}}</ion-item>
+      <ion-item id="milkBrands-list-item15">Calon Wen Organic {{product}}</ion-item>
+      <ion-item id="milkBrands-list-item24">Daylesford Organic {{product}}</ion-item>
+      <ion-item id="milkBrands-list-item26">Moo {{product}}</ion-item>
+      <ion-item id="milkBrands-list-item27">Dairy Pride {{product}}</ion-item>
+      <ion-item id="milkBrands-list-item28">Delamere goat &amp; cows {{product}}</ion-item>
+      <ion-item id="milkBrands-list-item29">Watsons {{product}}</ion-item>
+      <ion-item id="milkBrands-list-item30">Dale Farm Organic</ion-item>-->
+    </ion-list>
+  </ion-content>
+</ion-view>

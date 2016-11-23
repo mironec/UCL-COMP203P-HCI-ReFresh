@@ -1,0 +1,40 @@
+<ion-view title="{{brand}} {{product}}" hide-back-button="true" id="page10">
+  <ion-content padding="true" class="has-header">
+    <form id="bowlandMilk-form8" class="list">
+      <label class="item item-select" id="bowlandMilk-select3">
+        <span class="input-label">Quantity</span>
+        <select>
+          <option>1 litre</option>
+          <option>2 litre</option>
+          <option>3 litre</option>
+        </select>
+      </label>
+      <div id="bowlandMilk-button-bar1" class="button-bar"></div>
+	  <ion-item class="item-thumbnail-left" ng-repeat="shop in shops" ui-sref="menu.placeOrder({productName: product, brandName: brand, shopName: shop.shopName})">
+		<img ng-src="{{shop.shopImage}}">
+        <h2>Price: {{shop.getPriceFormatted(product, brand)}}</h2>
+        <p>Add to cart</p>
+	  </ion-item>
+      <!--<ion-item class="item-thumbnail-left" id="bowlandMilk-list-item35" ui-sref="menu.placeOrder({productName: product, brandName: brand, shopName: 'tesco'})">
+        <img src="img/gEpeitf1RVas5wfrAnVK_Tesco_Logo.jpg">
+        <h2>Price: £1.40</h2>
+        <p>Add to cart</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="bowlandMilk-list-item33" ui-sref="menu.placeOrder({productName: product, brandName: brand, shopName: 'sainsbury'})">
+        <img src="img/fLUcdVDvSuSPGzSUsYbU_downloadcopy.jpeg">
+        <h2>Price: £1.48</h2>
+        <p style="white-space:normal;">Add to cart</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="bowlandMilk-list-item34" ui-sref="menu.placeOrder({productName: product, brandName: brand, shopName: 'waitrose'})">
+        <img src="img/laOqBLeQRvaTRDCggEFj_download.jpeg">
+        <h2>Price: £1.59</h2>
+        <p>Add to cart</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="bowlandMilk-list-item36" ui-sref="menu.placeOrder({productName: product, brandName: brand, shopName: 'planetorganic'})">
+        <img src="img/me2apVHgQMunmYhAxqwG_PlanetOrganicLarge.jpg">
+        <h2>Price: £2.15</h2>
+        <p>Add to cart</p>
+      </ion-item>-->
+    </form>
+  </ion-content>
+</ion-view>
