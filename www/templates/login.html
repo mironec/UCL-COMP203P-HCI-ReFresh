@@ -13,6 +13,11 @@
         </label>
       </ion-list>
       <div class="spacer" style="height: 40px;"></div>
+	  <div class="g-signin2" id="g-signin2"></div>
+	  <div class="fb-signin" style="margin-top: 2px; text-align: center; width: 100%; background: linear-gradient(#4c69ba, #3b55a0);">
+		<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" size="xlarge"></fb:login-button>
+	  </div>
+	  <div class="spacer" style="height: 40px;"></div>
       <a ui-sref="menu.placeOrder" id="login-button1" class="button button-balanced  button-block">Log in</a>
       <a ui-sref="menu.signup" id="login-button2" class="button button-stable  button-block">Sign Up</a>
     </form>

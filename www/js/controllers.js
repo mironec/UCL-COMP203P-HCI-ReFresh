@@ -17,12 +17,17 @@ function ($scope, $stateParams) {
 
 }])
    
-.controller('loginCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('loginCtrl', ['$scope', '$stateParams', '$window', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
-
+function ($scope, $stateParams, $window) {
+	$scope.rend = function(){gapi.signin2.render('g-signin2', {'longtitle': true, 'width': $window.innerWidth - 20});};
+	$scope.checkRend = function(){
+		if(window.gapi !== undefined) $scope.rend();
+		else setTimeout($scope.checkRend, 500);
+	};
+	
+	$scope.checkRend();
 }])
    
 .controller('signupCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller

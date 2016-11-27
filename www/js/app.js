@@ -14,7 +14,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
 
 })
 
-.run(function($ionicPlatform, $rootScope) {
+.run(function($ionicPlatform, $rootScope, $window) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -58,6 +58,41 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
   };
   $rootScope.shops = [new sc('tesco', 'img/gEpeitf1RVas5wfrAnVK_Tesco_Logo.jpg'), new sc('sainsbury', 'img/fLUcdVDvSuSPGzSUsYbU_downloadcopy.jpeg'), new sc('waitrose', 'img/laOqBLeQRvaTRDCggEFj_download.jpeg'), new sc('planetorganic', 'img/me2apVHgQMunmYhAxqwG_PlanetOrganicLarge.jpg')];
   $rootScope.cart = [];
+  
+  $window.fbAsyncInit = function() {
+    // Executed when the SDK is loaded
+    console.log("fbAsyncInit is launching FB.init...");
+    FB.init({ 
+      //  The app id of the web app; To register a new app visit Facebook App Dashboard ( https://developers.facebook.com/apps/ )
+      appId: '245676302512647', 
+      // Adding a Channel File improves the performance  of the javascript SDK, by addressing issues  with cross-domain communication in certain browsers.
+      //channelUrl: 'templates/channel.html', 
+      //  Set if you want to check the authentication status at the start up of the app 
+      //status: true, 
+      //        Enable cookies to allow the server to access the session  
+      cookie: true,
+      // Parse XFBML
+      xfbml: true 
+    });
+
+  };
+  
+  (function(d){
+    // load the Facebook javascript SDK
+    var js, 
+    id = 'facebook-jssdk', 
+    ref = d.getElementsByTagName('script')[0];
+    if (d.getElementById(id)) {
+      return;
+    }
+    js = d.createElement('script'); 
+    js.id = id; 
+    js.async = true;
+    js.src = "//connect.facebook.net/en_US/all.js";
+    ref.parentNode.insertBefore(js, ref);
+  }(document));
+  
+  
 })
 
 .directive('disableSideMenuDrag', ['$ionicSideMenuDelegate', '$rootScope', function($ionicSideMenuDelegate, $rootScope) {
