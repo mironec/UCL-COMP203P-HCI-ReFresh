@@ -113,8 +113,20 @@ function ($scope, $stateParams) {
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
-
-
+	//$scope.deliveryDate = Date.now();
+	$scope.range = function(min, max, step) {
+		step = step || 1;
+		var input = [];
+		for (var i = min; i <= max; i += step) {
+			input.push(i);
+		}
+		return input;
+	};
+	$scope.data = {};
+	$scope.data.frequencyValue = 1;
+	$scope.data.oneoff = false;
+	$scope.frequencyNames = ["Monthly", "Every 3 weeks", "Every 2 weeks", "Every week", "Every 5 days", "Every 4 days", "Every 3 days", "Every 2 days", "Every day"];
+	$scope.getFrequencyName = function(){return $scope.frequencyNames[$scope.data.frequencyValue-1]};
 }])
    
 .controller('pageCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller

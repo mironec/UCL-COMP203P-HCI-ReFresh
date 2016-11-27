@@ -1,13 +1,37 @@
 <ion-view title="Payment" hide-back-button="true" id="page13">
   <ion-content padding="true" class="has-header">
-    <div class="list card" id="payment-card21">
+	<form id="payment-form10" class="list">
+      <ion-checkbox id="payment-checkbox1" ng-model="data.oneoff">One-off payment</ion-checkbox>
+    </form>
+	<form id="payment-form9" class="list">
+		<!--<ion-item>
+			<ion-label>Date</ion-label>
+			<ion-datetime displayFormat="HH:mm DD MMM YYYY" [(ngModel)]="deliveryDate"></ion-datetime>
+		</ion-item>-->
+      <label class="item item-input" id="payment-input14">
+        <span class="input-label">Date</span>
+        <input type="date">
+      </label>
+	  <label class="item item-input" id="payment-input15">
+        <span class="input-label">Time</span>
+		<select>
+		 <option ng-repeat="i in range(0,23)">{{ ((i<10)?("0"+i):i)+":00" }}</option>
+		</select>
+      </label>
+      <ion-item class="range range-positive" id="payment-range1" ng-hide="data.oneoff">Frequency
+        <input id="payment-range-input" type="range" min="1" max="9" step="1" ng-model="data.frequencyValue">
+      </ion-item>
+      <ion-item id="payment-list-item19" ng-hide="data.oneoff">{{getFrequencyName()}}</ion-item>
       <div class="item item-body" id="payment-list-item-container2">
         <div id="payment-markdown3" style="text-align:center;" class="show-list-numbers-and-dots">
           <p style="margin-top:0px;color:#000000;font-size:30px;">Total cost: {{ calculateCartFormatted() }}</p>
         </div>
       </div>
-    </div>
-    <form id="payment-form9" class="list">
+      <a ui-sref="menu.page" id="payment-button14" class="button button-balanced  button-block">Process payment</a>
+      <button id="payment-button15" class="button button-stable  button-block">Cancel payment</button>
+    </form>
+	
+    <!--<form id="payment-form9" class="list">
       <label class="item item-input" id="payment-input10">
         <span class="input-label">Card Number</span>
         <input type="text" placeholder="">
@@ -22,6 +46,6 @@
       </label>
       <a ui-sref="menu.page" id="payment-button14" class="button button-balanced  button-block">Process payment</a>
       <button id="payment-button15" class="button button-stable  button-block">Cancel payment</button>
-    </form>
+    </form>-->
   </ion-content>
 </ion-view>

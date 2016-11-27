@@ -3,7 +3,8 @@
     <ion-list id="cart-list8">
 		<ion-item class="item-thumbnail-left item-icon-right" ng-repeat="product in cart">
 			<img ng-src="{{getShopByName(product.shop).shopImage}}">
-			<h2>{{product.brand}} {{product.product}} - {{getShopByName(product.shop).getPriceFormatted(product.product, product.brand)}}</h2>
+			<h2>{{product.brand}} {{product.product}}</h2>
+			<p>Price - {{getShopByName(product.shop).getPriceFormatted(product.product, product.brand)}}</p>
 			<p>Quantity - 1</p>
 			<i class="icon ion-android-delete"></i>
 		</ion-item>
