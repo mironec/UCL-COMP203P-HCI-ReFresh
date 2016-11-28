@@ -1,12 +1,22 @@
 angular.module('app.controllers', [])
   
-.controller('placeOrderCtrl', ['$scope', '$stateParams', '$rootScope', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('placeOrderCtrl', ['$scope', '$stateParams', '$rootScope', '$cordovaBarcodeScanner', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams, $rootScope) {
+function ($scope, $stateParams, $rootScope, $cordovaBarcodeScanner) {
 	if($stateParams.productName !== undefined){
 		$rootScope.cart.push({product: $stateParams.productName, brand: $stateParams.brandName, shop: $stateParams.shopName});
 	}
+	
+	$scope.scanBarcode = function() {
+        $cordovaBarcodeScanner.scan().then(function(imageData) {
+            alert(imageData.text);
+            console.log("Barcode Format -> " + imageData.format);
+            console.log("Cancelled -> " + imageData.cancelled);
+        }, function(error) {
+            console.log("An error happened -> " + error);
+        });
+    };
 }])
    
 .controller('menuCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
