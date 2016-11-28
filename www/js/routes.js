@@ -55,6 +55,16 @@ angular.module('app.routes', [])
       }
     }
   })
+  
+  .state('menu.recurringOrders', {
+    url: '/page15',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/recurringOrders.html',
+        controller: 'recurringOrdersCtrl'
+      }
+    }
+  })
 
   .state('menu.brandSelection', {
     url: '/page8?productName',

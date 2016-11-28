@@ -55,6 +55,15 @@ function ($scope, $stateParams) {
 
 
 }])
+
+.controller('recurringOrdersCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams) {
+	$scope.hideStuff = false;
+	$scope.hideFunc = function(){$scope.hideStuff = !$scope.hideStuff;};
+	$scope.removeAll = function(){$scope.hideStuff = true; $scope.hideAllStuff = true;}
+}])
    
 .controller('brandSelectionCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
