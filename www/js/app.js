@@ -59,7 +59,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
   $rootScope.shops = [new sc('tesco', 'img/gEpeitf1RVas5wfrAnVK_Tesco_Logo.jpg'), new sc('sainsbury', 'img/fLUcdVDvSuSPGzSUsYbU_downloadcopy.jpeg'), new sc('waitrose', 'img/laOqBLeQRvaTRDCggEFj_download.jpeg'), new sc('planetorganic', 'img/me2apVHgQMunmYhAxqwG_PlanetOrganicLarge.jpg')];
   $rootScope.cart = [];
   
-  $window.fbAsyncInit = function() {
+  /*$window.fbAsyncInit = function() {
     // Executed when the SDK is loaded
     console.log("fbAsyncInit is launching FB.init...");
     FB.init({ 
@@ -90,7 +90,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
     js.async = true;
     js.src = "//connect.facebook.net/en_US/all.js";
     ref.parentNode.insertBefore(js, ref);
-  }(document));
+  }(document));*/
   
   
 })
